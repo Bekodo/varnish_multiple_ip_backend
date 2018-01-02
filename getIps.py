@@ -39,9 +39,9 @@ class Backends(object):
 		fo.write(tmpl_data)
 		fo.closed
 		if vcl_data == tmpl_data:
-			return True
-		else:
 			return False
+		else:
+			return True
 
 	def renewConf(self):
 		os.rename(self.newfile, self.vclfile)
@@ -50,7 +50,7 @@ class Backends(object):
 if __name__ == '__main__':
 	backend = Backends()
 	if (backend.compareConf()):
-		print("Son iguales")
-	else:
-		print("Son Diferentes")
+		print("Are direferent")
 		backend.renewConf()
+	else:
+		print("Are iqual")
